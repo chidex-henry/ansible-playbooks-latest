@@ -66,31 +66,6 @@ This project demonstrates the deployment of a static website on AWS using Ansibl
 - **Jupiter Website Commands Setup**:
     - Script for Ansible Playbook commands to deploy the website.
 
-     #!/bin/bash: This line indicates that the script should be executed using the Bash shell.
-
-    sudo su: Switches the user to the superuser or root user for executing subsequent commands with elevated privileges.
-
-    yum update -y: Updates the package manager and all installed packages without prompting for confirmation (-y flag).
-
-    yum install -y httpd: Installs the Apache HTTP server (httpd) package without prompting for confirmation.
-
-    cd /var/www/html: Changes the current directory to /var/www/html, which is the default web root directory for Apache.
-
-    wget https://github.com/azeezsalu/jupiter/archive/refs/heads/main.zip: Downloads the main.zip file from the specified GitHub repository.
-
-    unzip main.zip: Unzips the downloaded main.zip file, extracting its contents.
-
-    cp -r jupiter-main/* /var/www/html/: Copies the contents of the extracted jupiter-main directory to the Apache web root directory.
-
-    rm -rf jupiter-main main.zip: Removes the jupiter-main directory and the main.zip file to clean up after the deployment.
-  
-    systemctl enable httpd: Enables the Apache HTTP server to start automatically upon system boot.
-
-    systemctl start httpd: Starts the Apache HTTP server immediately.
-
-
-  Your bash script appears to automate the installation and setup of an Apache web server along with the deployment of a web application from a GitHub repository. Here's a breakdown of what each line does:
-
 ```bash
 #!/bin/bash
 ```
@@ -145,8 +120,6 @@ This command enables the Apache service to start automatically on system boot.
 systemctl start httpd
 ```
 This command starts the Apache service immediately.
-
-Overall, this script automates the setup of an Apache web server and deploys a web application from a GitHub repository. However, it's important to review and understand each command before running scripts, especially those with administrative privileges like this one. Additionally, ensure that you have the appropriate permissions and backups in place before running such scripts in a production environment.
   
 
 ### Conclusion
